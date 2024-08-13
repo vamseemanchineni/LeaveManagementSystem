@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using LeaveManagementSystem.Web.Data.Configurations;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -52,9 +53,12 @@ namespace LeaveManagementSystem.Web.Data
                     RoleId= "7252c346-8257-47fe-b91a-ecf35b3f7303",
                     UserId= "3e4d0ff0-8da2-4255-945e-71883be3e60b"
                 });
+            builder.ApplyConfiguration(new LeaveRequestStatusConfiguration());
         }
         public DbSet<LeaveType> LeaveTypes { get; set; }
         public DbSet<LeaveAllocation> LeaveAllocations { get; set; }
         public DbSet<Period> Periods { get; set; }
+        public DbSet<LeaveRequestStatus> LeaveRequestStatuses { get; set; }
+        public DbSet<LeaveRequest> LeaveRequests { get; set; }
     }
 }
