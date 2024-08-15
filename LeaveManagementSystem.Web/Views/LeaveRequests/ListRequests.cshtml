@@ -71,19 +71,19 @@
         @foreach (var item in Model.LeaveRequests)
         {
             var className = string.Empty;
-            if (item.LeaveRequestStatus == LeaveManagementSystem.Web.Services.LeaveRequests.LeaveRequestStatusEnum.Pending)
+            if (item.LeaveRequestStatus == LeaveManagementSystem.Application.Services.LeaveRequests.LeaveRequestStatusEnum.Pending)
             {
                 className = "warning";
             }
-            else if (item.LeaveRequestStatus == LeaveManagementSystem.Web.Services.LeaveRequests.LeaveRequestStatusEnum.Approved)
+            else if (item.LeaveRequestStatus == LeaveManagementSystem.Application.Services.LeaveRequests.LeaveRequestStatusEnum.Approved)
             {
                 className = "success";
             }
-            else if (item.LeaveRequestStatus == LeaveManagementSystem.Web.Services.LeaveRequests.LeaveRequestStatusEnum.Declined)
+            else if (item.LeaveRequestStatus == LeaveManagementSystem.Application.Services.LeaveRequests.LeaveRequestStatusEnum.Declined)
             {
                 className = "danger";
             }
-            else if (item.LeaveRequestStatus == LeaveManagementSystem.Web.Services.LeaveRequests.LeaveRequestStatusEnum.Canceled)
+            else if (item.LeaveRequestStatus == LeaveManagementSystem.Application.Services.LeaveRequests.LeaveRequestStatusEnum.Canceled)
             {
                 className = "dark";
             }
@@ -105,7 +105,7 @@
 
                 </td>
                 <td>
-                    @if (item.LeaveRequestStatus == LeaveManagementSystem.Web.Services.LeaveRequests.LeaveRequestStatusEnum.Pending)
+                    @if (item.LeaveRequestStatus == LeaveManagementSystem.Application.Services.LeaveRequests.LeaveRequestStatusEnum.Pending)
                     {
                         <a asp-action="Review" asp-route-id="@item.Id" class="btn btn-primary">Review</a>
                     }
